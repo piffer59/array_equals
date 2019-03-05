@@ -3,21 +3,22 @@
 def array_equals(array1, array2)
   if array1 == nil && array2 == nil
     return true
-  elsif array1 == [] && array2 == []
-    return true
   elsif array1 == nil || array2 == nil
     return false
   elsif array1.length != array2.length
     return false
   elsif array1.length == array2.length
-    array1.length.times do |compare_1, compare_2|
-      x = 0
+    element_count = 0
+    array1.length.times do |x|
       if array1[x] == array2[x]
-        x += 1
-        return true
+        element_count += 1
       else
         return false
       end
     end
+  end
+
+  if array1.length == element_count
+    return true
   end
 end
